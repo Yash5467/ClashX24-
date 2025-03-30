@@ -1,18 +1,25 @@
 "use client"
 
-import { useRef } from "react"
+import React, { useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Download, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { SparklesCore } from "@/components/ui/sparkles"
 import { GlitchText } from "@/components/ui/glitch-text"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
 import { FloatingGameIcons } from "@/components/ui/floating-game-icons"
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
+import axios from 'axios'
 
 export default function HeroSection() {
-  const ref = useRef(null)
+  const [userCount,setUserCount]=React.useState<number>(0)
+  const ref = useRef(null);
+  React.useEffect(()=>{
+    const countHandler= async ()=>{
+      const {data}= await axios.get("/api/user/count");
+      setUserCount(data.data);
+    }
+    countHandler();
+  },[])
   return (
     <section
       ref={ref}
@@ -134,7 +141,7 @@ export default function HeroSection() {
                 ))}
               </div>
               <div className="text-sm">
-                <span className="text-primary font-bold">10,000+</span> players already joined
+                <span className="text-primary font-bold">{userCount}+</span> players already joined
               </div>
             </motion.div>
           </motion.div>
