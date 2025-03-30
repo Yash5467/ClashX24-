@@ -34,7 +34,7 @@ export default function Home() {
 
       <div className="relative z-10">
         <Header />
-        <TracingBeam className="px-0">
+        {/* <TracingBeam className="px-0"> */}
           <main>
             <HeroSection />
             <FeaturesSection />
@@ -43,7 +43,7 @@ export default function Home() {
             <FaqSection />
             <CtaSection />
           </main>
-        </TracingBeam>
+        {/* </TracingBeam> */}
         <Footer />
       </div>
     </div>

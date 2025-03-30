@@ -53,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-10"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-lg text-muted-foreground max-w-xl"
+              className="text-lg text-muted-foreground max-w-xl max-md:mt-10"
             >
               Join thousands of players competing for glory and prizes in the biggest mobile battle royale tournaments.
             </motion.p>
@@ -112,24 +112,25 @@ export default function HeroSection() {
               className="flex items-center gap-4 pt-4"
             >
               <div className="flex -space-x-2">
-                {["Ram", "Uttam", "Sandeep", "Shivang"].map((name:string,i:number) => (
-                  <Tooltip
+                {["https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331446/8c491879-55cb-4812-83ab-bb447ff56813_npzjob.jpg",'https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331029/0db43186-cf21-430e-9066-4db63e813e05_xzctrt.jpg','https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331029/da3ae4e0-380d-4ad2-8f7a-d0cdd861b91a_blvuq5.jpg'].map((name:string,i:number) => (
+                  <div
                   key={`recent-users-tooltip-${name}-${i}`}
                   >
-                    <TooltipTrigger>
                     <motion.div
                     className="w-10 h-10 rounded-full border-2 flex justify-center items-center bg-white text-black border-primary/30 overflow-hidden shadow-glow"
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 1 + i * 0.1 }}
                   >
-                      {name.charAt(0)}
+                      <Image
+                      src={name}
+                       alt={`image-icon-${name}-${i}`}
+                       height={200}
+                       width={400}
+                       className="h-10 w-10 object-contain"
+                      />
                   </motion.div>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      {name}
-                    </TooltipContent>
-                  </Tooltip>
+                  </div>
                 ))}
               </div>
               <div className="text-sm">
