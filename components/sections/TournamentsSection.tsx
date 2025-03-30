@@ -11,15 +11,15 @@ import SectionHeading from "@/components/shared/SectionHeading"
 import { BackgroundBeams } from "@/components/ui/background-beams"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
 import { cn } from "@/lib/utils"
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "../ui/dialog"
 
 export default function TournamentsSection() {
   const [activeTab, setActiveTab] = useState("pubg")
-
   const tournaments = {
     pubg: [
       {
-        title: "PUBG Pro League",
-        image: "/placeholder.svg?height=300&width=300&text=PUBG+Tournament+1",
+        title: "BGMI Pro League",
+        image: "./tournament1.jpg",
         timeRemaining: "Starting in 2 hours",
         description: "Squad-based tournament with 100 teams competing for a prize pool of $5,000.",
         teams: 100,
@@ -28,8 +28,8 @@ export default function TournamentsSection() {
         date: "Today, 8:00 PM",
       },
       {
-        title: "PUBG Weekend Cup",
-        image: "/placeholder.svg?height=300&width=300&text=PUBG+Tournament+2",
+        title: "BGMI Weekend Cup",
+        image: "./tournament2.jpg",
         timeRemaining: "Tomorrow, 8:00 PM",
         description: "Weekend special tournament with custom rooms and live streaming.",
         teams: 100,
@@ -38,8 +38,8 @@ export default function TournamentsSection() {
         date: "Tomorrow, 8:00 PM",
       },
       {
-        title: "PUBG Championship Series",
-        image: "/placeholder.svg?height=300&width=300&text=PUBG+Tournament+3",
+        title: "BGMI Championship Series",
+        image: "./champianTrophy.jpg",
         timeRemaining: "In 3 days",
         description: "Official championship series with qualification rounds and finals.",
         teams: 100,
@@ -51,7 +51,7 @@ export default function TournamentsSection() {
     freefire: [
       {
         title: "Free Fire Pro League",
-        image: "/placeholder.svg?height=300&width=300&text=Free+Fire+Tournament+1",
+        image: "./tournament1.jpg",
         timeRemaining: "Starting in 3 hours",
         description: "Squad-based tournament with 100 teams competing for a prize pool of $4,000.",
         teams: 100,
@@ -61,7 +61,7 @@ export default function TournamentsSection() {
       },
       {
         title: "Free Fire Weekend Cup",
-        image: "/placeholder.svg?height=300&width=300&text=Free+Fire+Tournament+2",
+        image: "./tournament2.jpg",
         timeRemaining: "Tomorrow, 9:00 PM",
         description: "Weekend special tournament with custom rooms and live streaming.",
         teams: 100,
@@ -71,7 +71,7 @@ export default function TournamentsSection() {
       },
       {
         title: "Free Fire Championship Series",
-        image: "/placeholder.svg?height=300&width=300&text=Free+Fire+Tournament+3",
+        image: "./champianTrophy.jpg",
         timeRemaining: "In 2 days",
         description: "Official championship series with qualification rounds and finals.",
         teams: 100,
@@ -114,7 +114,7 @@ export default function TournamentsSection() {
               value="pubg"
               className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary transition-all duration-300 data-[state=active]:shadow-glow rounded-lg"
             >
-              PUBG Mobile
+              BGMI Mobile
             </TabsTrigger>
             <TabsTrigger
               value="freefire"
@@ -141,7 +141,7 @@ export default function TournamentsSection() {
                         <div className="flex flex-col md:flex-row">
                           <div className="relative w-full md:w-1/3 h-48 md:h-auto overflow-hidden">
                             <Image
-                              src={tournament.image || "/placeholder.svg"}
+                              src={tournament.image}
                               alt={tournament.title}
                               fill
                               className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -150,7 +150,7 @@ export default function TournamentsSection() {
 
                             {/* Tournament Badge */}
                             <div className="absolute top-4 left-4 bg-primary/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-primary/30 shadow-glow">
-                              {game === "pubg" ? "PUBG Mobile" : "Free Fire"}
+                              {game === "pubg" ? "BGMI Mobile" : "Free Fire"}
                             </div>
                           </div>
                           <div className="p-6 md:w-2/3 flex flex-col justify-between">
@@ -202,11 +202,23 @@ export default function TournamentsSection() {
                               >
                                 View Details
                               </Button>
+                             <Dialog>
+                              <DialogTrigger>
                               <HoverGlowEffect>
                                 <Button variant="gaming" size="sm">
                                   Register Now
                                 </Button>
                               </HoverGlowEffect>
+                              </DialogTrigger>
+                              <DialogContent>
+                                <DialogTitle>
+                                  To Register You Need To Download Application 
+                                </DialogTitle>
+                                <Button>
+                                  Downlaod Now
+                                </Button>
+                              </DialogContent>
+                             </Dialog>
                             </div>
                           </div>
                         </div>

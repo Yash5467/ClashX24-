@@ -80,7 +80,7 @@ export default function FaqSection() {
                 <AccordionItem value={`item-${index}`} className="border-none">
                   <Card className="bg-card/50 backdrop-blur-sm border-primary/20 overflow-hidden group">
                     <AccordionTrigger className="px-6 py-4 hover:no-underline group">
-                      <h3 className="text-xl font-bold text-left group-hover:text-primary transition-colors">
+                      <h3 className="text-xl font-semibold text-left group-hover:text-primary transition-colors">
                         {faq.question}
                       </h3>
                     </AccordionTrigger>

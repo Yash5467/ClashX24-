@@ -19,10 +19,12 @@ export default function CtaSection() {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
 
   return (
-    <section ref={ref} className="py-20 bg-background relative overflow-hidden">
+    <section ref={ref}
+    id="contactUs"
+    className="py-20 bg-background relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 opacity-30"></div>
-        <Meteors number={20} />
+        {/* <Meteors number={5} /> */}
       </div>
 
       <motion.div style={{ y, opacity, scale }} className="container relative z-10">

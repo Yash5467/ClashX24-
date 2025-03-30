@@ -2,35 +2,29 @@
 
 import { useRef } from "react"
 import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { Download, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SparklesCore } from "@/components/ui/sparkles"
 import { GlitchText } from "@/components/ui/glitch-text"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
 import { FloatingGameIcons } from "@/components/ui/floating-game-icons"
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
 
 export default function HeroSection() {
   const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
-
   return (
     <section
       ref={ref}
+      id="heroSection"
       className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden min-h-screen flex items-center"
     >
       <div className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/hero-bg.jpg"
           alt="Gaming background"
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-40"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background"></div>
@@ -39,7 +33,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
 
         {/* Sparkles effect */}
-        <div className="absolute inset-0 w-full h-full">
+        {/* <div className="absolute inset-0 w-full h-full">
           <SparklesCore
             id="tsparticlesfullpage"
             background="transparent"
@@ -50,10 +44,10 @@ export default function HeroSection() {
             particleColor="#22c55e"
             speed={0.5}
           />
-        </div>
+        </div> */}
       </div>
 
-      <motion.div style={{ y, opacity }} className="container relative z-10">
+      <motion.div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0 }}
@@ -72,9 +66,9 @@ export default function HeroSection() {
 
             <div className="h-24 md:h-28">
               <GlitchText
-                text="Compete in PUBG & Free Fire Tournaments"
+                text="Compete in BGMI & Free Fire Tournaments"
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-                highlightWords={["PUBG", "Free Fire"]}
+                highlightWords={["BGMI", "Free Fire"]}
               />
             </div>
 
@@ -118,21 +112,24 @@ export default function HeroSection() {
               className="flex items-center gap-4 pt-4"
             >
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <motion.div
-                    key={i}
-                    className="w-10 h-10 rounded-full border-2 border-primary/30 overflow-hidden shadow-glow"
+                {["Ram", "Uttam", "Sandeep", "Shivang"].map((name:string,i:number) => (
+                  <Tooltip
+                  key={`recent-users-tooltip-${name}-${i}`}
+                  >
+                    <TooltipTrigger>
+                    <motion.div
+                    className="w-10 h-10 rounded-full border-2 flex justify-center items-center bg-white text-black border-primary/30 overflow-hidden shadow-glow"
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 1 + i * 0.1 }}
                   >
-                    <Image
-                      src={`/placeholder.svg?height=100&width=100&text=User${i}`}
-                      alt={`User ${i}`}
-                      width={40}
-                      height={40}
-                    />
+                      {name.charAt(0)}
                   </motion.div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {name}
+                    </TooltipContent>
+                  </Tooltip>
                 ))}
               </div>
               <div className="text-sm">
@@ -161,14 +158,14 @@ export default function HeroSection() {
                 ease: "easeInOut",
               }}
             >
-              <div className="absolute inset-0 rounded-2xl border border-primary/30 shadow-glow"></div>
+              {/* <div className="absolute inset-0 rounded-2xl border border-primary/30 shadow-glow"></div>
               <Image
                 src="/placeholder.svg?height=1000&width=500&text=App+Screenshot"
                 alt="App screenshot"
                 fill
                 className="object-contain rounded-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent rounded-2xl"></div> */}
 
               {/* HUD Elements */}
               <div className="absolute top-4 left-4 right-4 flex justify-between">
@@ -182,7 +179,7 @@ export default function HeroSection() {
 
               <div className="absolute bottom-8 left-4 right-4 bg-background/40 backdrop-blur-sm p-3 rounded-lg border border-primary/30">
                 <div className="text-xs text-muted-foreground mb-1">Next Tournament</div>
-                <div className="text-sm font-bold">PUBG Pro League Finals</div>
+                <div className="text-sm font-bold">BGMI Pro League Finals</div>
                 <div className="w-full h-1.5 bg-muted/50 rounded-full mt-2 overflow-hidden">
                   <motion.div
                     className="h-full bg-primary"

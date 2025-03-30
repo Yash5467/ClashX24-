@@ -20,7 +20,7 @@ export const Meteors = ({
       <span
         key={i}
         className={cn(
-          "absolute top-0 left-0 w-0.5 h-10 bg-primary rotate-[35deg] shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] block transform-gpu",
+          "absolute top-0 left-0 w-[1px] h-4 bg-primary rotate-[35deg] shadow-[0_0_10px_2px_rgba(34,197,94,0.6)] block transform-gpu",
           className,
         )}
         style={{

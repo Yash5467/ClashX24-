@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
-
+import Image from "next/image"
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -49,9 +49,15 @@ export default function Header() {
             initial={{ rotate: -10, scale: 0.9 }}
             animate={{ rotate: 0, scale: 1 }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="relative"
-          >
-            <Gamepad2 className="h-8 w-8 text-primary relative z-10" />
+            className="relative rounded-full overflow-hidden h-10 w-10"
+          > 
+             <Image
+              src="/logo.jpg"
+              alt="clashx-24 logo"
+              height={100}
+              width={400}
+              className="h-10 w-10  object-cover rounded-full "
+             />
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg animate-pulse-glow"></div>
           </motion.div>
           <motion.span

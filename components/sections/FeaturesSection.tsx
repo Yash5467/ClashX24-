@@ -15,22 +15,22 @@ export default function FeaturesSection() {
 
   const features = [
     {
-      icon: <Trophy className="h-10 w-10 text-primary" />,
+      icon: <Trophy className="h-10 w-10 text-white" />,
       title: "Daily Tournaments",
-      description: "Compete in daily tournaments for both PUBG Mobile and Free Fire with various prize pools.",
+      description: "Compete in daily tournaments for both BGMI Mobile and Free Fire with various prize pools.",
     },
     {
-      icon: <Users className="h-10 w-10 text-primary" />,
+      icon: <Users className="h-10 w-10 text-white" />,
       title: "Team Management",
       description: "Create or join teams, manage your roster, and communicate with teammates all in one place.",
     },
     {
-      icon: <Calendar className="h-10 w-10 text-primary" />,
+      icon: <Calendar className="h-10 w-10 text-white" />,
       title: "Tournament Scheduling",
       description: "Never miss a tournament with our advanced scheduling and notification system.",
     },
     {
-      icon: <Smartphone className="h-10 w-10 text-primary" />,
+      icon: <Smartphone className="h-10 w-10 text-white" />,
       title: "Mobile-First Design",
       description: "Our app is designed specifically for mobile gamers with intuitive controls and interfaces.",
     },
@@ -46,7 +46,7 @@ export default function FeaturesSection() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-primary"
+          className="text-white"
         >
           <path d="M12 2v8"></path>
           <path d="m4.93 10.93 1.41 1.41"></path>
@@ -73,7 +73,7 @@ export default function FeaturesSection() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-primary"
+          className="text-white"
         >
           <circle cx="12" cy="12" r="10"></circle>
           <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
@@ -128,22 +128,12 @@ export default function FeaturesSection() {
           animate={isInView ? "show" : "hidden"}
         >
           {features.map((feature, index) => (
-            <HoverCard key={index} openDelay={100} closeDelay={100}>
-              <HoverCardTrigger asChild>
-                <motion.div
-                  variants={item}
-                  whileHover={{
-                    scale: 1.03,
-                    transition: { duration: 0.3 },
-                  }}
-                  className="feature-card cursor-pointer"
-                >
                   <Card
                     className={cn(
                       "bg-card/50 backdrop-blur-sm border-primary/20 h-full overflow-hidden group",
                       "hover:border-primary/50 transition-all duration-300",
                       "relative before:absolute before:inset-0 before:bg-gaming-gradient before:opacity-0",
-                      "before:transition-opacity hover:before:opacity-100 before:-z-10",
+                      "before:transition-opacity hover:before:opacity-100 before:-z-10 hover:scale-105 transition-all" ,
                     )}
                   >
                     <div className="p-6 space-y-4 relative z-10">
@@ -154,27 +144,8 @@ export default function FeaturesSection() {
                         {feature.title}
                       </h3>
                       <p className="text-muted-foreground">{feature.description}</p>
-
-                      {/* Gaming UI Element */}
-                      <div className="absolute top-3 right-3">
-                        <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                      </div>
                     </div>
-                  </Card>
-                </motion.div>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-80 bg-card/80 backdrop-blur-sm border-primary/30">
-                <div className="space-y-2">
-                  <h4 className="text-lg font-semibold text-primary">{feature.title}</h4>
-                  <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  <div className="pt-2 border-t border-border/50 mt-2">
-                    <p className="text-xs text-muted-foreground">
-                      Unlock advanced {feature.title.toLowerCase()} features by joining our premium tier.
-                    </p>
-                  </div>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
+                  </Card>          
           ))}
         </motion.div>
       </div>

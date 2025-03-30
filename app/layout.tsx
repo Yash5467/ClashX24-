@@ -16,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans antialiased">
+          <TooltipProvider>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>
+          </TooltipProvider>
       </body>
     </html>
   )
@@ -27,3 +29,4 @@ export default function RootLayout({
 
 
 import './globals.css'
+import { TooltipProvider } from "@/components/ui/tooltip"

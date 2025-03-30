@@ -23,10 +23,11 @@ export const FloatingPhoneAnimation = () => {
       <motion.div ref={phoneRef} className="relative h-full w-full">
         <div className="absolute inset-0 rounded-2xl border border-primary/30 shadow-glow"></div>
         <Image
-          src="/placeholder.svg?height=1200&width=600&text=App+Interface"
+          src="./chatimg01.jpg"
           alt="App interface"
           fill
-          className="object-contain rounded-2xl"
+
+          className="object-contain rounded-2xl  "
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent rounded-2xl"></div>
 
@@ -60,7 +61,7 @@ export const FloatingPhoneAnimation = () => {
             </div>
             <div>
               <div className="text-xs font-bold">Tournament Starting</div>
-              <div className="text-xs text-muted-foreground">PUBG Pro League begins in 15 minutes</div>
+              <div className="text-xs text-muted-foreground">BGMI Pro League begins in 15 minutes</div>
             </div>
           </div>
         </motion.div>
@@ -86,7 +87,7 @@ export const FloatingPhoneAnimation = () => {
 
         <div className="absolute bottom-8 left-4 right-4 bg-background/40 backdrop-blur-sm p-3 rounded-lg border border-primary/30">
           <div className="text-xs text-muted-foreground mb-1">Next Tournament</div>
-          <div className="text-sm font-bold">PUBG Pro League Finals</div>
+          <div className="text-sm font-bold">BGMI Pro League Finals</div>
           <div className="w-full h-1.5 bg-muted/50 rounded-full mt-2 overflow-hidden">
             <motion.div
               className="h-full bg-primary"

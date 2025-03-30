@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Gamepad2 } from "lucide-react"
+import Image from "next/image"
 
 export default function GameLoader() {
   const [progress, setProgress] = useState(0)
@@ -30,7 +31,13 @@ export default function GameLoader() {
           transition={{ duration: 0.5 }}
           className="relative z-10"
         >
-          <Gamepad2 className="h-20 w-20 text-primary" />
+         <Image 
+         src="/logo.jpg"
+         alt="clashx-24-brand-icon"
+         height={30 }
+         width={50} 
+         className="rounded-full object-contain"
+         />
         </motion.div>
         <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse-glow"></div>
       </div>
@@ -41,7 +48,7 @@ export default function GameLoader() {
         transition={{ delay: 0.3, duration: 0.5 }}
         className="mt-8 text-2xl font-bold"
       >
-        BattleRoyale
+        ClashX24
       </motion.div>
 
       <div className="mt-8 w-64 h-2 bg-muted rounded-full overflow-hidden">
