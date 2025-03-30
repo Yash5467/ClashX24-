@@ -50,14 +50,14 @@ export default function Header() {
             animate={{ rotate: 0, scale: 1 }}
             transition={{ duration: 0.5, type: "spring" }}
             className="relative rounded-full overflow-hidden h-10 w-10"
-          > 
-             <Image
+          >
+            <Image
               src="/logo.jpg"
               alt="clashx-24 logo"
               height={100}
               width={400}
               className="h-10 w-10  object-cover rounded-full "
-             />
+            />
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg animate-pulse-glow"></div>
           </motion.div>
           <motion.span
@@ -91,15 +91,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+        <a
+          href='https://expo.dev/artifacts/eas/qdjcTZTxDoxvPYWPGQChiw.apk'
+          download={true}
         >
-          <Button variant="gaming" size="sm" className="hidden md:flex">
-            <Download className="mr-2 h-4 w-4" /> Download App
+          <Button variant="gaming" size="lg" className="gap-2">
+            <Download className="h-5 w-5" /> Download App
           </Button>
-        </motion.div>
+        </a>
 
         <Button variant="ghost" size="icon" className="md:hidden z-50" onClick={toggleMobileMenu}>
           <span className="sr-only">Toggle menu</span>
@@ -135,16 +134,15 @@ export default function Header() {
                   </Link>
                 </motion.div>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.5 }}
+              <a
                 className="mt-8"
+                href='https://expo.dev/artifacts/eas/qdjcTZTxDoxvPYWPGQChiw.apk'
+                download={true}
               >
                 <Button variant="gaming" size="lg" className="gap-2">
                   <Download className="h-5 w-5" /> Download App
                 </Button>
-              </motion.div>
+              </a>
             </div>
           </motion.div>
         )}
