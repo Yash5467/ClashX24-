@@ -125,14 +125,14 @@ export default function TournamentsSection() {
           </TabsList>
 
           {["pubg", "freefire"].map((game) => (
-            <TabsContent key={game} value={game} className="space-y-6">
+            <TabsContent key={game} value={game} className="space-y-6 ">
               <AnimatePresence mode="wait">
                 <motion.div key={game} variants={container} initial="hidden" animate="show" exit={{ opacity: 0 }}>
                   {tournaments[game as keyof typeof tournaments].map((tournament, i) => (
                     <motion.div key={i} variants={item} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                       <Card
-                        className={cn(
-                          "bg-card/50 backdrop-blur-sm border-primary/20 overflow-hidden group",
+                        className={cn( 
+                          " mb-8 bg-card/50 backdrop-blur-sm border-primary/20 overflow-hidden group",
                           "hover:border-primary/50 transition-all duration-300",
                           "relative before:absolute before:inset-0 before:bg-gaming-gradient before:opacity-0",
                           "before:transition-opacity hover:before:opacity-100 before:-z-10",

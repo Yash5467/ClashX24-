@@ -90,7 +90,7 @@ export default function Header() {
             </motion.div>
           ))}
         </nav>
-
+{/* 
         <a
           href='https://expo.dev/artifacts/eas/a5fiFWEN3ojHrbWoMcnoa.apk'
           download={true}
@@ -98,7 +98,7 @@ export default function Header() {
           <Button variant="gaming" size="lg" className="gap-2">
             <Download className="h-5 w-5" /> Download App
           </Button>
-        </a>
+        </a> */} 
 
         <Button variant="ghost" size="icon" className="md:hidden z-50" onClick={toggleMobileMenu}>
           <span className="sr-only">Toggle menu</span>
