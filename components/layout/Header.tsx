@@ -96,9 +96,9 @@ export default function Header() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Button variant="gaming" size="sm" className="hidden md:flex">
+          {/* <Button variant="gaming" size="sm" className="hidden md:flex">
             <Download className="mr-2 h-4 w-4" /> Download App
-          </Button>
+          </Button> */}
         </motion.div>
 
         <Button variant="ghost" size="icon" className="md:hidden z-50" onClick={toggleMobileMenu}>
