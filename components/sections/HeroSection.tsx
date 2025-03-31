@@ -1,18 +1,25 @@
 "use client"
 
-import { useRef } from "react"
+import React, { useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Download, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { SparklesCore } from "@/components/ui/sparkles"
 import { GlitchText } from "@/components/ui/glitch-text"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
 import { FloatingGameIcons } from "@/components/ui/floating-game-icons"
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
+import axios from 'axios'
 
 export default function HeroSection() {
-  const ref = useRef(null)
+  const [userCount, setUserCount] = React.useState<number>(0)
+  const ref = useRef(null);
+  React.useEffect(() => {
+    const countHandler = async () => {
+      const { data } = await axios.get("/api/user/count");
+      setUserCount(data.data);
+    }
+    countHandler();
+  }, [])
   return (
     <section
       ref={ref}
@@ -87,13 +94,18 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
-              <HoverGlowEffect>
-                <Button variant="gaming" size="lg" className="gap-2 relative overflow-hidden group">
-                  <span className="relative flex items-center gap-2">
-                    <Download className="h-5 w-5" /> Download App
-                  </span>
-                </Button>
-              </HoverGlowEffect>
+              <a
+                href='https://expo.dev/artifacts/eas/qdjcTZTxDoxvPYWPGQChiw.apk'
+                download={true}
+              >
+                <HoverGlowEffect>
+                  <Button variant="gaming" size="lg" className="gap-2 relative overflow-hidden group">
+                    <span className="relative flex items-center gap-2">
+                      <Download className="h-5 w-5" /> Download App
+                    </span>
+                  </Button>
+                </HoverGlowEffect>
+              </a>
 
               <Button
                 variant="outline"
@@ -112,29 +124,29 @@ export default function HeroSection() {
               className="flex items-center gap-4 pt-4"
             >
               <div className="flex -space-x-2">
-                {["https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331446/8c491879-55cb-4812-83ab-bb447ff56813_npzjob.jpg",'https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331029/0db43186-cf21-430e-9066-4db63e813e05_xzctrt.jpg','https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331029/da3ae4e0-380d-4ad2-8f7a-d0cdd861b91a_blvuq5.jpg'].map((name:string,i:number) => (
+                {["https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331446/8c491879-55cb-4812-83ab-bb447ff56813_npzjob.jpg", 'https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331029/0db43186-cf21-430e-9066-4db63e813e05_xzctrt.jpg', 'https://res.cloudinary.com/dqdvsab8g/image/upload/v1743331029/da3ae4e0-380d-4ad2-8f7a-d0cdd861b91a_blvuq5.jpg'].map((name: string, i: number) => (
                   <div
-                  key={`recent-users-tooltip-${name}-${i}`}
+                    key={`recent-users-tooltip-${name}-${i}`}
                   >
                     <motion.div
-                    className="w-10 h-10 rounded-full border-2 flex justify-center items-center bg-white text-black border-primary/30 overflow-hidden shadow-glow"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 1 + i * 0.1 }}
-                  >
+                      className="w-10 h-10 rounded-full border-2 flex justify-center items-center bg-white text-black border-primary/30 overflow-hidden shadow-glow"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: 1 + i * 0.1 }}
+                    >
                       <Image
-                      src={name}
-                       alt={`image-icon-${name}-${i}`}
-                       height={200}
-                       width={400}
-                       className="h-10 w-10 object-contain"
+                        src={name}
+                        alt={`image-icon-${name}-${i}`}
+                        height={200}
+                        width={400}
+                        className="h-10 w-10 object-contain"
                       />
-                  </motion.div>
+                    </motion.div>
                   </div>
                 ))}
               </div>
               <div className="text-sm">
-                <span className="text-primary font-bold">10,000+</span> players already joined
+                <span className="text-primary font-bold">{userCount}+</span> players already joined
               </div>
             </motion.div>
           </motion.div>
