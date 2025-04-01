@@ -208,7 +208,7 @@ export default function TournamentsSection() {
                                     To Register You Need To Download Application
                                   </DialogTitle>
                                   <a
-                                    href='https://expo.dev/artifacts/eas/jHtsR5fnCRGAEtRWNbdqxo.apk'
+                                    href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
                                     download={true}
                                   >
                                     <Button>

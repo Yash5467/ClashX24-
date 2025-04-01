@@ -58,7 +58,7 @@ export default function CtaSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
              <a
-                href='https://expo.dev/artifacts/eas/jHtsR5fnCRGAEtRWNbdqxo.apk'
+                href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
                 download={true}
               >
             <HoverGlowEffect>

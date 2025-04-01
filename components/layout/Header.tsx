@@ -29,7 +29,7 @@ export default function Header() {
   const navLinks = [
     { name: "Features", href: "#features" },
     { name: "Tournaments", href: "#tournaments" },
-    { name: "Download", href: "https://expo.dev/artifacts/eas/jHtsR5fnCRGAEtRWNbdqxo.apk" },
+    { name: "Download", href: "https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk" },
     { name: "FAQ", href: "#faq" },
   ]
 
@@ -128,7 +128,7 @@ export default function Header() {
               ))}
               <a
                 className="mt-8"
-                href='https://expo.dev/artifacts/eas/jHtsR5fnCRGAEtRWNbdqxo.apk'
+                href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
                 download={true}
               >
                 <Button variant="gaming" size="lg" className="gap-2">
