@@ -29,7 +29,7 @@ export default function Header() {
   const navLinks = [
     { name: "Features", href: "#features" },
     { name: "Tournaments", href: "#tournaments" },
-    { name: "Download", href: "#download" },
+    { name: "Download", href: "https://expo.dev/artifacts/eas/jHtsR5fnCRGAEtRWNbdqxo.apk" },
     { name: "FAQ", href: "#faq" },
   ]
 
@@ -79,26 +79,18 @@ export default function Header() {
               transition={{ duration: 0.3, delay: index * 0.1 }}
             >
               <HoverGlowEffect>
-                <Link
+                <a
+                  download={true}
                   href={link.href}
                   className="relative hover:text-primary transition-colors duration-300 text-sm font-medium"
                 >
                   {link.name}
                   <span className="absolute left-0 bottom-0 w-full h-0.5 bg-primary scale-x-0 transition-transform duration-300 origin-left hover:scale-x-100" />
-                </Link>
+                </a>
               </HoverGlowEffect>
             </motion.div>
           ))}
         </nav>
-{/* 
-        <a
-          href='https://expo.dev/artifacts/eas/eq4fqergWYzREhEUfsXeNt.apk'
-          download={true}
-        >
-          <Button variant="gaming" size="lg" className="gap-2">
-            <Download className="h-5 w-5" /> Download App
-          </Button>
-        </a> */} 
 
         <Button variant="ghost" size="icon" className="md:hidden z-50" onClick={toggleMobileMenu}>
           <span className="sr-only">Toggle menu</span>
@@ -136,7 +128,7 @@ export default function Header() {
               ))}
               <a
                 className="mt-8"
-                href='https://expo.dev/artifacts/eas/eq4fqergWYzREhEUfsXeNt.apk'
+                href='https://expo.dev/artifacts/eas/jHtsR5fnCRGAEtRWNbdqxo.apk'
                 download={true}
               >
                 <Button variant="gaming" size="lg" className="gap-2">

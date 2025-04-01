@@ -114,7 +114,7 @@ export default function DownloadSection() {
                 className="pt-4 space-y-4"
               >
                 <h3 className="font-medium">Download Now:</h3>
-                <div className="flex flex-col sm:flex-row gap-4">
+                {/* <div className="flex flex-col sm:flex-row gap-4">
                   <Button variant="gaming" className="h-14 px-6 gap-3 justify-start group">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -145,7 +145,7 @@ export default function DownloadSection() {
                       <div className="font-medium">App Store</div>
                     </div>
                   </Button>
-                </div>
+                </div> */}
               </motion.div>
             </SpotlightCard>
           </motion.div>
