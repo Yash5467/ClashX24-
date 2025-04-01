@@ -95,7 +95,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <a
-                href='https://expo.dev/artifacts/eas/qsDfDUMeKy1uGgPoz4s7Zf.apk'
+                href='https://expo.dev/artifacts/eas/eq4fqergWYzREhEUfsXeNt.apk'
                 download={true}
               >
                 <HoverGlowEffect>

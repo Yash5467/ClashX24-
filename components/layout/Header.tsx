@@ -92,7 +92,7 @@ export default function Header() {
         </nav>
 {/* 
         <a
-          href='https://expo.dev/artifacts/eas/qsDfDUMeKy1uGgPoz4s7Zf.apk'
+          href='https://expo.dev/artifacts/eas/eq4fqergWYzREhEUfsXeNt.apk'
           download={true}
         >
           <Button variant="gaming" size="lg" className="gap-2">
@@ -136,7 +136,7 @@ export default function Header() {
               ))}
               <a
                 className="mt-8"
-                href='https://expo.dev/artifacts/eas/qsDfDUMeKy1uGgPoz4s7Zf.apk'
+                href='https://expo.dev/artifacts/eas/eq4fqergWYzREhEUfsXeNt.apk'
                 download={true}
               >
                 <Button variant="gaming" size="lg" className="gap-2">
