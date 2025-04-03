@@ -96,7 +96,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <a
-                href='https://expo.dev/artifacts/eas/qdjcTZTxDoxvPYWPGQChiw.apk'
+                href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
                 download={true}
               >
                 <HoverGlowEffect>
@@ -107,15 +107,6 @@ export default function HeroSection() {
                   </Button>
                 </HoverGlowEffect>
               </a>
-
-              <Button
-                variant="outline"
-                size="lg"
-                className="gap-2 group border-primary/30 hover:border-primary/80 hover:bg-primary/10"
-              >
-                View Tournaments
-                <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Button>
             </motion.div>
 
             <motion.div

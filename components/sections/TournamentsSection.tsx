@@ -131,7 +131,7 @@ export default function TournamentsSection() {
                   {tournaments[game as keyof typeof tournaments].map((tournament, i) => (
                     <motion.div key={i} variants={item} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                       <Card
-                        className={cn( 
+                        className={cn(
                           " mb-8 bg-card/50 backdrop-blur-sm border-primary/20 overflow-hidden group",
                           "hover:border-primary/50 transition-all duration-300",
                           "relative before:absolute before:inset-0 before:bg-gaming-gradient before:opacity-0",
@@ -195,30 +195,29 @@ export default function TournamentsSection() {
                               </div>
                             </div>
                             <div className="flex justify-between items-center mt-6">
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className="border-primary/30 hover:bg-primary/10 hover:border-primary/50"
-                              >
-                                View Details
-                              </Button>
-                             <Dialog>
-                              <DialogTrigger>
-                              <HoverGlowEffect>
-                                <Button variant="gaming" size="sm">
-                                  Register Now
-                                </Button>
-                              </HoverGlowEffect>
-                              </DialogTrigger>
-                              <DialogContent>
-                                <DialogTitle>
-                                  To Register You Need To Download Application 
-                                </DialogTitle>
-                                <Button>
-                                  Downlaod Now
-                                </Button>
-                              </DialogContent>
-                             </Dialog>
+                              <Dialog>
+                                <DialogTrigger>
+                                  <HoverGlowEffect>
+                                    <Button variant="gaming" size="sm">
+                                      Register Now
+                                    </Button>
+                                  </HoverGlowEffect>
+                                </DialogTrigger>
+                                <DialogContent>
+                                  <DialogTitle>
+                                    To Register You Need To Download Application
+                                  </DialogTitle>
+                                  <a
+                                    href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
+                                    download={true}
+                                  >
+                                    <Button>
+                                      Downlaod Now
+                                    </Button>
+
+                                  </a>
+                                </DialogContent>
+                              </Dialog>
                             </div>
                           </div>
                         </div>

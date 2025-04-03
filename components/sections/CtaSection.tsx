@@ -57,11 +57,16 @@ export default function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
+             <a
+                href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
+                download={true}
+              >
             <HoverGlowEffect>
               <Button variant="gaming" size="lg" className="gap-2">
                 <Download className="h-5 w-5" /> Download App
               </Button>
             </HoverGlowEffect>
+              </a>
             <Button
               variant="outline"
               size="lg"
