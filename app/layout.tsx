@@ -16,11 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans antialiased">
-          <TooltipProvider>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-          </TooltipProvider>
+        <TooltipProvider>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+            {children}
+          </ThemeProvider>
+        </TooltipProvider>
       </body>
     </html>
   )
