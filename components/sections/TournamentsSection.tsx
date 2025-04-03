@@ -21,7 +21,7 @@ export default function TournamentsSection() {
         title: "BGMI Pro League",
         image: "./tournament1.jpg",
         timeRemaining: "Starting in 2 hours",
-        description: "Squad-based tournament with 100 teams competing for a prize pool of $5,000.",
+        description: "Squad-based tournament with 100 teams competing for a prize pool of ₹5,000.",
         teams: 100,
         registeredTeams: 85,
         prize: 5000,
@@ -53,7 +53,7 @@ export default function TournamentsSection() {
         title: "Free Fire Pro League",
         image: "./tournament1.jpg",
         timeRemaining: "Starting in 3 hours",
-        description: "Squad-based tournament with 100 teams competing for a prize pool of $4,000.",
+        description: "Squad-based tournament with 100 teams competing for a prize pool of ₹4,000.",
         teams: 100,
         registeredTeams: 90,
         prize: 4000,
@@ -179,7 +179,7 @@ export default function TournamentsSection() {
                                 <div className="flex items-center gap-1">
                                   <Trophy className="h-4 w-4 text-primary" />
                                   <span className="text-sm text-muted-foreground">
-                                    ${tournament.prize.toLocaleString()} Prize
+                                  ₹{tournament.prize.toLocaleString()} Prize
                                   </span>
                                 </div>
                               </div>

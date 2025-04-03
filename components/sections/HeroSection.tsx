@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button"
 import { GlitchText } from "@/components/ui/glitch-text"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
 import { FloatingGameIcons } from "@/components/ui/floating-game-icons"
-import axios from 'axios'
+ import axios from "axios"
+
 
 export default function HeroSection() {
   const [userCount, setUserCount] = React.useState<number>(0)
