@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Download, ChevronRight } from "lucide-react"
@@ -13,6 +13,36 @@ import { FloatingGameIcons } from "@/components/ui/floating-game-icons"
 
 export default function HeroSection() {
   const [userCount, setUserCount] = React.useState<number>(0)
+
+  //dynamic time
+  const previousTime = 2 * 3600 + 30 * 60 + 50; // 2:30:50
+  const [time, settime] = useState(previousTime);
+
+  const formatTime = (seconds:number) => {
+    const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const secs = String(seconds % 60).padStart(2, '0');
+    return `${hrs}:${mins}:${secs}`;
+  };
+
+
+  useEffect(()=>{
+    const interval = setInterval(() => {
+      console.log(time)                 
+      settime(prev=>{
+        if(prev<=0){
+          return previousTime
+        }
+        return prev-1;
+      }
+      );
+    }, 1000);
+    return ()=>clearInterval(interval)
+  },[previousTime])
+
+
+
+
   const ref = useRef(null);
   React.useEffect(() => {
     const countHandler = async () => {
@@ -195,7 +225,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex justify-between text-xs mt-1">
                   <span>65/100 Teams</span>
-                  <span>Starts in 2h 15m</span>
+                  <span>Starts in {formatTime(time)}</span>
                 </div>
               </div>
             </motion.div>
