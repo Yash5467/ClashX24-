@@ -15,6 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+        <link rel="icon" href="/favicon.ico" />
+   
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <TooltipProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
