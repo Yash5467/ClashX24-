@@ -4,7 +4,7 @@ export default function Page() {
     return (
         <div>
             <h1>Privacy Policy</h1>
-            <p><strong>Effective Date:</strong> [Insert Date]</p>
+            <p><strong>Effective Date:</strong> 01/05/2025</p>
             <p>
                 At <strong>ClashX24</strong>, we are committed to safeguarding your privacy and ensuring that your personal information is handled responsibly. This Privacy Policy outlines how we collect, use, and protect your information when you use our services.
             </p>
@@ -55,10 +55,10 @@ export default function Page() {
                 If you have any questions about this Privacy Policy, the practices of this site, or your dealings with us, please contact us at:
             </p>
             <ul>
-                <li><strong>Email:</strong> <a href="mailto:clashx2400@gmail.com">clashx2400@gmail.com</a></li>
+                <li><strong>Email:</strong> <a href="mailto:support@clashx24.com">support@clashx24.com</a></li>
                 <li><strong>Address:</strong> Khargone, Madhya Pradesh 451001, India</li>
             </ul>
-            <p><em>This document was last updated on [Insert Date].</em></p>
+            <p><em>This document was last updated on 01/05/2025.</em></p>
         </div>
     );
 }

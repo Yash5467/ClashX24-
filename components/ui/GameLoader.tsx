@@ -66,7 +66,7 @@ export default function GameLoader() {
         transition={{ delay: 0.5 }}
         className="mt-4 text-sm text-muted-foreground"
       >
-        Loading game assets... {progress}%
+        Loading... {progress}%
       </motion.div>
 
       {/* Gaming UI Elements */}
