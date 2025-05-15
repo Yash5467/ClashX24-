@@ -12,10 +12,7 @@ import { FloatingGameIcons } from "@/components/ui/floating-game-icons"
 
 
 export default function HeroSection() {
-  const [userCount, setUserCount] = React.useState<number>(0)
-
-  //dynamic time
-  const previousTime = 2 * 3600 + 30 * 60 + 50; // 2:30:50
+  const previousTime = 2 * 3600 + 30 * 60 + 50;
   const [time, settime] = useState(previousTime);
 
   const formatTime = (seconds:number) => {
@@ -44,13 +41,6 @@ export default function HeroSection() {
 
 
   const ref = useRef(null);
-  React.useEffect(() => {
-    const countHandler = async () => {
-      const { data } = await axios.get("/api/user/count");
-      setUserCount(data.data);
-    }
-    countHandler();
-  }, [])
   return (
     <section
       ref={ref}
@@ -168,7 +158,7 @@ export default function HeroSection() {
                 ))}
               </div>
               <div className="text-sm">
-                <span className="text-primary font-bold">{userCount}+</span> players already joined
+                <span className="text-primary font-bold">200+</span> players already joined
               </div>
             </motion.div>
           </motion.div>
