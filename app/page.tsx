@@ -9,25 +9,9 @@ import TournamentsSection from "@/components/sections/TournamentsSection"
 import DownloadSection from "@/components/sections/DownloadSection"
 import FaqSection from "@/components/sections/FaqSection"
 import CtaSection from "@/components/sections/CtaSection"
-import GameLoader from "@/components/ui/GameLoader"
 import { ThreeDBackground } from "@/components/ui/ThreeDBackground"
-import { TracingBeam } from "@/components/ui/tracing-beam"
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 1500)
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (isLoading) {
-    return <GameLoader />
-  }
-
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
       <ThreeDBackground />

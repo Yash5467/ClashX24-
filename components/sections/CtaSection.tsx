@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { Download, Gamepad2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
-import { Meteors } from "@/components/ui/meteors"
 
 export default function CtaSection() {
   const ref = useRef(null)
@@ -19,12 +18,13 @@ export default function CtaSection() {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
 
   return (
-    <section ref={ref}
-    id="contactUs"
-    className="py-20 bg-background relative overflow-hidden">
+    <section
+      ref={ref}
+      id="contactUs"
+      className="py-20 bg-background relative overflow-hidden"
+    >
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 opacity-30"></div>
-        {/* <Meteors number={5} /> */}
       </div>
 
       <motion.div style={{ y, opacity, scale }} className="container relative z-10">
@@ -45,11 +45,12 @@ export default function CtaSection() {
           </motion.div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            Ready to Dominate the <span className="text-primary">Battlefield</span>?
+            Ready to Prove Your <span className="text-primary">Skill</span> and Win Real Cash?
           </h2>
           <p className="text-xl text-muted-foreground">
-            Download our app now and start your journey to becoming a battle royale champion.
+            Download our app now to join skill-based challenges, compete fairly, and earn real money based on your gaming ability.
           </p>
+
           <motion.div
             className="pt-4 flex flex-col sm:flex-row justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
@@ -57,16 +58,13 @@ export default function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-             <a
-                href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
-                download={true}
-              >
-            <HoverGlowEffect>
-              <Button variant="gaming" size="lg" className="gap-2">
-                <Download className="h-5 w-5" /> Download App
-              </Button>
-            </HoverGlowEffect>
-              </a>
+            <a href="https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk" download={true}>
+              <HoverGlowEffect>
+                <Button variant="gaming" size="lg" className="gap-2">
+                  <Download className="h-5 w-5" /> Download App
+                </Button>
+              </HoverGlowEffect>
+            </a>
             <Button
               variant="outline"
               size="lg"
@@ -76,7 +74,7 @@ export default function CtaSection() {
             </Button>
           </motion.div>
 
-          {/* Gaming UI Element */}
+          {/* Skill Indicator Dots */}
           <div className="flex justify-center gap-2 mt-8">
             {[1, 2, 3].map((i) => (
               <div
@@ -96,4 +94,3 @@ export default function CtaSection() {
     </section>
   )
 }
-

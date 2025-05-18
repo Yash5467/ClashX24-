@@ -9,17 +9,14 @@ import { cn } from "@/lib/utils"
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
 import Image from "next/image"
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      setIsScrolled(window.scrollY > 10)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -28,7 +25,7 @@ export default function Header() {
 
   const navLinks = [
     { name: "Features", href: "#features" },
-    { name: "Tournaments", href: "#tournaments" },
+    { name: "Challenges", href: "#challenges" }, // Previously "Tournaments"
     { name: "Download", href: "https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk" },
     { name: "FAQ", href: "#faq" },
   ]
@@ -56,9 +53,9 @@ export default function Header() {
               alt="clashx-24 logo"
               height={100}
               width={400}
-              className="h-10 w-10  object-cover rounded-full "
+              className="h-10 w-10 object-cover rounded-full"
             />
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg animate-pulse-glow"></div>
+            <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg animate-pulse-glow" />
           </motion.div>
           <motion.span
             initial={{ opacity: 0, x: -10 }}
@@ -80,7 +77,7 @@ export default function Header() {
             >
               <HoverGlowEffect>
                 <a
-                  download={true}
+                  download={link.name === "Download"}
                   href={link.href}
                   className="relative hover:text-primary transition-colors duration-300 text-sm font-medium"
                 >
@@ -97,7 +94,6 @@ export default function Header() {
           {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </Button>
       </div>
-
 
       <AnimatePresence>
         {isMobileMenuOpen && (
@@ -122,14 +118,14 @@ export default function Header() {
                     onClick={closeMobileMenu}
                   >
                     <TextGenerateEffect words={link.name} />
-                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                   </Link>
                 </motion.div>
               ))}
               <a
                 className="mt-8"
-                href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
-                download={true}
+                href="https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk"
+                download
               >
                 <Button variant="gaming" size="lg" className="gap-2">
                   <Download className="h-5 w-5" /> Download App
@@ -142,4 +138,3 @@ export default function Header() {
     </header>
   )
 }
-

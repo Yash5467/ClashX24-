@@ -12,7 +12,6 @@ export default function Footer() {
       links: [
         { name: "Home", id: "heroSection" },
         { name: "Features", id: "features" },
-        { name: "Tournaments", id: "tournaments" },
         { name: "Download", id: "download" },
         { name: "FAQ", id: "faq" },
         { name: "Contact Us", id: "contactUs" }
@@ -23,11 +22,11 @@ export default function Footer() {
       links: [
 
         {
-          name: "bgmi",
+          name: "BGMI",
           id: "tournaments"
         },
         {
-          name: "freefire",
+          name: "Free Fire",
           id: "tournaments"
         }
       ],
@@ -137,10 +136,10 @@ export default function Footer() {
                 <Gamepad2 className="h-8 w-8 text-primary relative z-10" />
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg animate-pulse-glow"></div>
               </div>
-              <span className="font-bold text-xl text-glow">BattleRoyale</span>
+              <span className="font-bold text-xl text-glow">ClashX24</span>
             </Link>
             <p className="text-muted-foreground">
-              The ultimate platform for mobile battle royale tournaments and competitive gaming.
+              The ultimate platform for mobile battle royale skill games and competitive play.
             </p>
             <div className="flex gap-4">
               {socialIcons.map((social) => (
@@ -209,7 +208,7 @@ export default function Footer() {
           transition={{ delay: 0.5 }}
         >
           <p className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} BattleRoyale. All rights reserved.
+            © 2025 ClashX24. Winesports Technologies Pvt Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             {[{

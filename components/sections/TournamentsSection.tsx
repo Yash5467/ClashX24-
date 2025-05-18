@@ -16,71 +16,56 @@ import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "../ui/dialog"
 export default function TournamentsSection() {
   const [activeTab, setActiveTab] = useState("pubg")
   const tournaments = {
-    pubg: [
+    bgmi: [
       {
-        title: "BGMI Pro League",
+        title: "BGMI Pro League - Squad (4v4)",
         image: "./tournament1.jpg",
         timeRemaining: "Starting in 2 hours",
-        description: "Squad-based tournament with 100 teams competing for a prize pool of ₹5,000.",
+        description: "Competitive 4v4 squad battles with 100 teams vying for a ₹5,000 prize pool.",
         teams: 100,
         registeredTeams: 85,
         prize: 5000,
         date: "Today, 8:00 PM",
+        type: "4v4 Squad",
       },
       {
-        title: "BGMI Weekend Cup",
-        image: "./tournament2.jpg",
-        timeRemaining: "Tomorrow, 8:00 PM",
-        description: "Weekend special tournament with custom rooms and live streaming.",
-        teams: 100,
-        registeredTeams: 62,
-        prize: 3000,
-        date: "Tomorrow, 8:00 PM",
-      },
-      {
-        title: "BGMI Championship Series",
-        image: "./champianTrophy.jpg",
-        timeRemaining: "In 3 days",
-        description: "Official championship series with qualification rounds and finals.",
-        teams: 100,
-        registeredTeams: 45,
-        prize: 10000,
-        date: "Sat, 10:00 AM",
+        title: "BGMI Solo Showdown (1v1)",
+        image: "./tournament3.jpg",
+        timeRemaining: "Starting in 4 hours",
+        description: "Intense 1v1 battles testing individual skills in custom rooms.",
+        teams: 64,
+        registeredTeams: 40,
+        prize: 2000,
+        date: "Today, 10:00 PM",
+        type: "1v1 Solo",
       },
     ],
     freefire: [
       {
-        title: "Free Fire Pro League",
+        title: "Free Fire Pro League - Squad",
         image: "./tournament1.jpg",
         timeRemaining: "Starting in 3 hours",
-        description: "Squad-based tournament with 100 teams competing for a prize pool of ₹4,000.",
+        description: "4v4 squad tournament with 100 teams competing for a ₹4,000 prize pool.",
         teams: 100,
         registeredTeams: 90,
         prize: 4000,
         date: "Today, 9:00 PM",
+        type: "4v4 Squad",
       },
       {
-        title: "Free Fire Weekend Cup",
-        image: "./tournament2.jpg",
-        timeRemaining: "Tomorrow, 9:00 PM",
-        description: "Weekend special tournament with custom rooms and live streaming.",
-        teams: 100,
-        registeredTeams: 75,
-        prize: 2500,
-        date: "Tomorrow, 9:00 PM",
-      },
-      {
-        title: "Free Fire Championship Series",
-        image: "./champianTrophy.jpg",
-        timeRemaining: "In 2 days",
-        description: "Official championship series with qualification rounds and finals.",
-        teams: 100,
-        registeredTeams: 60,
-        prize: 8000,
-        date: "Fri, 7:00 PM",
+        title: "Free Fire Solo Clash (1v1)",
+        image: "./tournament3.jpg",
+        timeRemaining: "Starting in 5 hours",
+        description: "1v1 battles to prove your solo skills in custom arenas.",
+        teams: 64,
+        registeredTeams: 50,
+        prize: 1500,
+        date: "Today, 11:00 PM",
+        type: "1v1 Solo",
       },
     ],
-  }
+  };
+
 
   const container = {
     hidden: { opacity: 0 },
@@ -103,15 +88,14 @@ export default function TournamentsSection() {
 
       <div className="container relative z-10">
         <SectionHeading
-          title="Upcoming Tournaments"
-          description="Join our upcoming tournaments and compete for glory and amazing prizes."
-          highlightWord="Tournaments"
+          title="Upcoming Competitions"
+          description="Participate in exciting competitions and showcase your skills to win amazing prizes."
+          highlightWord="Competitions"
         />
-
-        <Tabs defaultValue="pubg" className="w-full max-w-4xl mx-auto" onValueChange={setActiveTab}>
+        <Tabs defaultValue="bgmi" className="w-full max-w-4xl mx-auto" onValueChange={setActiveTab}>
           <TabsList className="grid w-full grid-cols-2 mb-8 p-1 bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl">
             <TabsTrigger
-              value="pubg"
+              value="bgmi"
               className="data-[state=active]:bg-primary/20 data-[state=active]:text-primary transition-all duration-300 data-[state=active]:shadow-glow rounded-lg"
             >
               BGMI Mobile
@@ -124,12 +108,12 @@ export default function TournamentsSection() {
             </TabsTrigger>
           </TabsList>
 
-          {["pubg", "freefire"].map((game) => (
+          {["bgmi", "freefire"].map((game) => (
             <TabsContent key={game} value={game} className="space-y-6 ">
               <AnimatePresence mode="wait">
                 <motion.div key={game} variants={container} initial="hidden" animate="show" exit={{ opacity: 0 }}>
                   {tournaments[game as keyof typeof tournaments].map((tournament, i) => (
-                    <motion.div key={i} variants={item} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
+                    <motion.div key={`matches-section-${i}`} variants={item} whileHover={{ scale: 1.02 }} transition={{ duration: 0.3 }}>
                       <Card
                         className={cn(
                           " mb-8 bg-card/50 backdrop-blur-sm border-primary/20 overflow-hidden group",
@@ -147,10 +131,8 @@ export default function TournamentsSection() {
                               className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent"></div>
-
-                            {/* Tournament Badge */}
                             <div className="absolute top-4 left-4 bg-primary/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-primary/30 shadow-glow">
-                              {game === "pubg" ? "BGMI Mobile" : "Free Fire"}
+                              {game === "bgmi" ? "BGMI Mobile" : "Free Fire"}
                             </div>
                           </div>
                           <div className="p-6 md:w-2/3 flex flex-col justify-between">
@@ -179,7 +161,7 @@ export default function TournamentsSection() {
                                 <div className="flex items-center gap-1">
                                   <Trophy className="h-4 w-4 text-primary" />
                                   <span className="text-sm text-muted-foreground">
-                                  ₹{tournament.prize.toLocaleString()} Prize
+                                    ₹{tournament.prize.toLocaleString()} Prize
                                   </span>
                                 </div>
                               </div>
@@ -204,17 +186,9 @@ export default function TournamentsSection() {
                                   </HoverGlowEffect>
                                 </DialogTrigger>
                                 <DialogContent>
-                                  <DialogTitle>
-                                    To Register You Need To Download Application
-                                  </DialogTitle>
-                                  <a
-                                    href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
-                                    download={true}
-                                  >
-                                    <Button>
-                                      Downlaod Now
-                                    </Button>
-
+                                  <DialogTitle>To Register You Need To Download Application</DialogTitle>
+                                  <a href="https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk" download={true}>
+                                    <Button>Download Now</Button>
                                   </a>
                                 </DialogContent>
                               </Dialog>
@@ -226,20 +200,12 @@ export default function TournamentsSection() {
                   ))}
                 </motion.div>
               </AnimatePresence>
-
-              <div className="text-center pt-6">
-                <Button
-                  variant="outline"
-                  className="border-primary/30 hover:border-primary/50 transition-colors hover:bg-primary/10"
-                >
-                  View All Tournaments
-                </Button>
-              </div>
             </TabsContent>
           ))}
         </Tabs>
       </div>
     </section>
+
   )
 }
 

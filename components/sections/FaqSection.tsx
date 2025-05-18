@@ -9,34 +9,39 @@ import { BackgroundCells } from "@/components/ui/background-cells"
 export default function FaqSection() {
   const faqs = [
     {
-      question: "How do I join a tournament?",
+      question: "What is skill-based gaming?",
       answer:
-        "To join a tournament, download our app, create an account, and navigate to the Tournaments section. Select the tournament you want to join, review the rules and requirements, and click the Register button.",
+        "Skill-based gaming allows players to compete against each other based on their abilities and performance rather than luck. Our platform hosts various skill games where you can test and improve your skills while competing for real cash prizes.",
     },
     {
-      question: "Are the tournaments free to enter?",
+      question: "How do I participate in skill-based games?",
       answer:
-        "We offer both free and paid tournaments. Free tournaments are open to all players, while paid tournaments require an entry fee but offer larger prize pools. The entry fee is clearly displayed on each tournament page.",
+        "To participate, simply download our app, create an account, and browse the available skill games. Choose a game, review the rules, pay the entry fee if applicable, and start competing with other players.",
     },
     {
-      question: "How are prizes distributed?",
+      question: "Are there any entry fees for skill games?",
       answer:
-        "Prize distribution varies by tournament. Typically, prizes are distributed among the top teams, with the largest portion going to the winner. The exact distribution is specified in each tournament's rules section.",
+        "Some skill games are free to join, while others require a small entry fee. Entry fees contribute to the prize pool. All fees and prize details are transparently displayed before you join any game.",
     },
     {
-      question: "Can I create my own team?",
+      question: "How are winnings paid out?",
       answer:
-        "Yes, you can create your own team in the app. Go to the Teams section, click 'Create Team', and follow the instructions. You can then invite other players to join your team.",
+        "Winnings from skill-based games are credited directly to your wallet within the app. You can withdraw your earnings securely via supported payment methods like Cashfree or use them to join more games.",
     },
     {
-      question: "What happens if I disconnect during a match?",
+      question: "Can I play solo or with a team?",
       answer:
-        "If you disconnect during a match, you can rejoin as long as the match is still in progress. However, we cannot pause matches for disconnected players, so it's important to have a stable internet connection.",
+        "You can play solo or join/create teams depending on the game format. Team-based skill games allow you to collaborate and strategize with friends to increase your chances of winning.",
     },
     {
-      question: "Is the app available worldwide?",
+      question: "What happens if I lose internet connection during a game?",
       answer:
-        "Yes, our app is available worldwide on both iOS and Android devices. However, some tournaments may have regional restrictions, which will be clearly indicated in the tournament details.",
+        "If you lose connection during a game, you may rejoin if the match is still active. However, continuous stable internet is recommended as games are time-sensitive and do not pause.",
+    },
+    {
+      question: "Is the platform available internationally?",
+      answer:
+        "Our platform is accessible worldwide, but some games may have regional restrictions due to legal regulations. These restrictions are clearly mentioned on each game's info page.",
     },
   ]
 
@@ -63,7 +68,7 @@ export default function FaqSection() {
       <div className="container relative z-10">
         <SectionHeading
           title="Frequently Asked Questions"
-          description="Find answers to common questions about our platform and tournaments."
+          description="Find answers to common questions about our skill-based gaming platform."
           highlightWord="Questions"
         />
 
@@ -99,4 +104,3 @@ export default function FaqSection() {
     </section>
   )
 }
-

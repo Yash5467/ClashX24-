@@ -19,11 +19,11 @@ export default function DownloadSection() {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
 
   const features = [
-    "Join tournaments with just a few taps",
-    "Receive real-time notifications for matches",
-    "Chat with teammates and opponents",
-    "Track your stats and progress",
-    "Stream your gameplay directly to our platform",
+    "Compete in skill-based challenges with ease",
+    "Receive instant notifications for upcoming matches",
+    "Connect and strategize with your team",
+    "Monitor your performance and skill progression",
+    "Stream your gameplay to share your skills live",
   ]
 
   const container = {
@@ -48,7 +48,6 @@ export default function DownloadSection() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-50"></div>
         <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-tl from-primary/20 via-transparent to-transparent opacity-50"></div>
       </div>
-
       <motion.div style={{ opacity, scale }} className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div style={{ y: y1 }} className="relative order-2 lg:order-1">
@@ -63,7 +62,7 @@ export default function DownloadSection() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold leading-tight"
               >
-                Download Our <span className="text-primary">Mobile App</span> and Start Competing Today
+                Download Our <span className="text-primary">Mobile App</span> and Join Skill-Based Competitions
               </motion.h2>
 
               <motion.p
@@ -73,8 +72,7 @@ export default function DownloadSection() {
                 transition={{ delay: 0.2 }}
                 className="text-muted-foreground"
               >
-                Get instant access to tournaments, team management, live streaming, and more with our dedicated mobile
-                app.
+                Experience fair and skill-driven competitions, team management, live streaming, and more — all through our dedicated mobile app.
               </motion.p>
 
               <motion.div
@@ -114,6 +112,7 @@ export default function DownloadSection() {
                 className="pt-4 space-y-4"
               >
                 <h3 className="font-medium">Download Now:</h3>
+                {/* Uncomment and customize buttons below as needed */}
                 {/* <div className="flex flex-col sm:flex-row gap-4">
                   <Button variant="gaming" className="h-14 px-6 gap-3 justify-start group">
                     <svg
@@ -154,4 +153,3 @@ export default function DownloadSection() {
     </section>
   )
 }
-

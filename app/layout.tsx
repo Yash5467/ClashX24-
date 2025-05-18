@@ -6,10 +6,11 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import Script from "next/script"
 
 export const metadata = {
-  title: "ClashX24 - BGMI & Free Fire Tournament Platform",
+  title: "ClashX24 - Skill-Based Gaming for BGMI & Free Fire",
   description:
-    "Join thousands of players competing for glory and prizes in the biggest mobile battle royale tournaments.",
+    "Experience competitive skill-based challenges in BGMI and Free Fire. Play matches, improve your rank, and earn rewards for your performance.",
 }
+
 
 export default function RootLayout({
   children,

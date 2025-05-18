@@ -26,8 +26,7 @@ export const FloatingPhoneAnimation = () => {
           src="./chatimg01.jpg"
           alt="App interface"
           fill
-
-          className="object-contain rounded-2xl  "
+          className="object-contain rounded-2xl"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent rounded-2xl"></div>
 
@@ -60,8 +59,8 @@ export const FloatingPhoneAnimation = () => {
               <Trophy className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <div className="text-xs font-bold">Tournament Starting</div>
-              <div className="text-xs text-muted-foreground">BGMI Pro League begins in 15 minutes</div>
+              <div className="text-xs font-bold">Skill Challenge Live</div>
+              <div className="text-xs text-muted-foreground">Prove your skills & win cash prizes</div>
             </div>
           </div>
         </motion.div>
@@ -79,15 +78,15 @@ export const FloatingPhoneAnimation = () => {
               <Users className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <div className="text-xs font-bold">Team Invitation</div>
-              <div className="text-xs text-muted-foreground">XShadowKillerX invited you to join their squad</div>
+              <div className="text-xs font-bold">Challenge Invite</div>
+              <div className="text-xs text-muted-foreground">XShadowKillerX invited you to a 1v1 skill match</div>
             </div>
           </div>
         </motion.div>
 
         <div className="absolute bottom-8 left-4 right-4 bg-background/40 backdrop-blur-sm p-3 rounded-lg border border-primary/30">
-          <div className="text-xs text-muted-foreground mb-1">Next Tournament</div>
-          <div className="text-sm font-bold">BGMI Pro League Finals</div>
+          <div className="text-xs text-muted-foreground mb-1">Next Skill Challenge</div>
+          <div className="text-sm font-bold">Ultimate Gamer Showdown</div>
           <div className="w-full h-1.5 bg-muted/50 rounded-full mt-2 overflow-hidden">
             <motion.div
               className="h-full bg-primary"
@@ -97,7 +96,7 @@ export const FloatingPhoneAnimation = () => {
             ></motion.div>
           </div>
           <div className="flex justify-between text-xs mt-1">
-            <span>65/100 Teams</span>
+            <span>65/100 Players Registered</span>
             <span>Starts in 2h 15m</span>
           </div>
         </div>
@@ -119,4 +118,3 @@ export const FloatingPhoneAnimation = () => {
     </div>
   )
 }
-

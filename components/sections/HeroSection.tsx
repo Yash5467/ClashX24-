@@ -8,14 +8,14 @@ import { Button } from "@/components/ui/button"
 import { GlitchText } from "@/components/ui/glitch-text"
 import { HoverGlowEffect } from "@/components/ui/hover-glow-effect"
 import { FloatingGameIcons } from "@/components/ui/floating-game-icons"
- import axios from "axios"
+import axios from "axios"
 
 
 export default function HeroSection() {
   const previousTime = 2 * 3600 + 30 * 60 + 50;
   const [time, settime] = useState(previousTime);
 
-  const formatTime = (seconds:number) => {
+  const formatTime = (seconds: number) => {
     const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
     const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
     const secs = String(seconds % 60).padStart(2, '0');
@@ -23,19 +23,19 @@ export default function HeroSection() {
   };
 
 
-  useEffect(()=>{
+  useEffect(() => {
     const interval = setInterval(() => {
-      console.log(time)                 
-      settime(prev=>{
-        if(prev<=0){
+      console.log(time)
+      settime(prev => {
+        if (prev <= 0) {
           return previousTime
         }
-        return prev-1;
+        return prev - 1;
       }
       );
     }, 1000);
-    return ()=>clearInterval(interval)
-  },[previousTime])
+    return () => clearInterval(interval)
+  }, [previousTime])
 
 
 
@@ -89,12 +89,12 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="inline-block px-4 py-1.5 bg-primary/20 rounded-full text-primary font-medium text-sm border border-primary/30 shadow-glow"
             >
-              #1 Battle Royale Tournament Platform
+              India’s Top Skill-Based Battle Royale Platform
             </motion.div>
 
             <div className="h-24 md:h-28">
               <GlitchText
-                text="Compete in BGMI & Free Fire Tournaments"
+                text="Skill-Based BGMI & Free Fire Challenges"
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                 highlightWords={["BGMI", "Free Fire"]}
               />
@@ -106,7 +106,7 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-lg text-muted-foreground max-w-xl max-md:mt-10"
             >
-              Join thousands of players competing for glory and prizes in the biggest mobile battle royale tournaments.
+              Challenge yourself with intense battle royale action alongside thousands of skilled players.
             </motion.p>
 
             <motion.div
@@ -158,7 +158,7 @@ export default function HeroSection() {
                 ))}
               </div>
               <div className="text-sm">
-                <span className="text-primary font-bold">200+</span> players already joined
+                <span className="text-primary font-bold">200+</span> active players and counting
               </div>
             </motion.div>
           </motion.div>
@@ -183,16 +183,6 @@ export default function HeroSection() {
                 ease: "easeInOut",
               }}
             >
-              {/* <div className="absolute inset-0 rounded-2xl border border-primary/30 shadow-glow"></div>
-              <Image
-                src="/placeholder.svg?height=1000&width=500&text=App+Screenshot"
-                alt="App screenshot"
-                fill
-                className="object-contain rounded-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent rounded-2xl"></div> */}
-
-              {/* HUD Elements */}
               <div className="absolute top-4 left-4 right-4 flex justify-between">
                 <div className="bg-background/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs border border-primary/30">
                   LIVE
@@ -203,8 +193,8 @@ export default function HeroSection() {
               </div>
 
               <div className="absolute bottom-8 left-4 right-4 bg-background/40 backdrop-blur-sm p-3 rounded-lg border border-primary/30">
-                <div className="text-xs text-muted-foreground mb-1">Next Tournament</div>
-                <div className="text-sm font-bold">BGMI Pro League Finals</div>
+                <div className="text-xs text-muted-foreground mb-1">Upcoming Match</div>
+                <div className="text-sm font-bold">BGMI Clash Night</div>
                 <div className="w-full h-1.5 bg-muted/50 rounded-full mt-2 overflow-hidden">
                   <motion.div
                     className="h-full bg-primary"
@@ -214,7 +204,7 @@ export default function HeroSection() {
                   ></motion.div>
                 </div>
                 <div className="flex justify-between text-xs mt-1">
-                  <span>65/100 Teams</span>
+                  <span>65/100 Squads</span> or <span>65/100 Entries</span>
                   <span>Starts in {formatTime(time)}</span>
                 </div>
               </div>
