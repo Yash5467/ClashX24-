@@ -217,7 +217,12 @@ export default function Footer() {
             }, {
               slug: "Contact Us",
               link: "/contact-us"
-            }, {
+            },
+            {
+              slug: "Terms & Conditions",
+              link: "/terms-conditions"
+            },
+            {
               slug: "About Us",
               link: "/about"
             }, {
