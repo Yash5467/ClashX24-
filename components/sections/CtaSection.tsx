@@ -58,7 +58,7 @@ export default function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <a href="https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk" download={true}>
+            <a href="https://clashx24-bucket.blr1.cdn.digitaloceanspaces.com/clashx24-apk/ClashX24.V.1.0.0.apk" download={true}>
               <HoverGlowEffect>
                 <Button variant="gaming" size="lg" className="gap-2">
                   <Download className="h-5 w-5" /> Download App

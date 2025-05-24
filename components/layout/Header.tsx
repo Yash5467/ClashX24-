@@ -26,7 +26,7 @@ export default function Header() {
   const navLinks = [
     { name: "Features", href: "#features" },
     { name: "Challenges", href: "#challenges" }, // Previously "Tournaments"
-    { name: "Download", href: "https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk" },
+    { name: "Download", href: "https://clashx24-bucket.blr1.cdn.digitaloceanspaces.com/clashx24-apk/ClashX24.V.1.0.0.apk" },
     { name: "FAQ", href: "#faq" },
   ]
 
@@ -124,7 +124,7 @@ export default function Header() {
               ))}
               <a
                 className="mt-8"
-                href="https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk"
+                href="https://clashx24-bucket.blr1.cdn.digitaloceanspaces.com/clashx24-apk/ClashX24.V.1.0.0.apk"
                 download
               >
                 <Button variant="gaming" size="lg" className="gap-2">

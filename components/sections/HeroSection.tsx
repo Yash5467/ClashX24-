@@ -116,7 +116,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <a
-                href='https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk'
+                href='https://clashx24-bucket.blr1.cdn.digitaloceanspaces.com/clashx24-apk/ClashX24.V.1.0.0.apk'
                 download={true}
               >
                 <HoverGlowEffect>

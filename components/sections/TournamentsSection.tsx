@@ -187,7 +187,7 @@ export default function TournamentsSection() {
                                 </DialogTrigger>
                                 <DialogContent>
                                   <DialogTitle>To Register You Need To Download Application</DialogTitle>
-                                  <a href="https://expo.dev/artifacts/eas/vPKBq2y43ELrRPgGq8JiFz.apk" download={true}>
+                                  <a href="https://clashx24-bucket.blr1.cdn.digitaloceanspaces.com/clashx24-apk/ClashX24.V.1.0.0.apk" download={true}>
                                     <Button>Download Now</Button>
                                   </a>
                                 </DialogContent>
