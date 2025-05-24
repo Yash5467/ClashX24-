@@ -24,11 +24,6 @@ export default function FaqSection() {
         "Some skill games are free to join, while others require a small entry fee. Entry fees contribute to the prize pool. All fees and prize details are transparently displayed before you join any game.",
     },
     {
-      question: "How are winnings paid out?",
-      answer:
-        "Winnings from skill-based games are credited directly to your wallet within the app. You can withdraw your earnings securely via supported payment methods like Cashfree or use them to join more games.",
-    },
-    {
       question: "Can I play solo or with a team?",
       answer:
         "You can play solo or join/create teams depending on the game format. Team-based skill games allow you to collaborate and strategize with friends to increase your chances of winning.",
@@ -37,11 +32,6 @@ export default function FaqSection() {
       question: "What happens if I lose internet connection during a game?",
       answer:
         "If you lose connection during a game, you may rejoin if the match is still active. However, continuous stable internet is recommended as games are time-sensitive and do not pause.",
-    },
-    {
-      question: "Is the platform available internationally?",
-      answer:
-        "Our platform is accessible worldwide, but some games may have regional restrictions due to legal regulations. These restrictions are clearly mentioned on each game's info page.",
     },
   ]
 
