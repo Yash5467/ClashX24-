@@ -43,7 +43,7 @@ export default function QRLandingScreen() {
             alt="bg-image-qr"
             height={800}
             width={1600}
-            className="-z-10 opacity-50 h-screen cursor-pointer"
+            className="-z-10 opacity-50 h-full cursor-pointer"
           />
         <span className="absolute top-1/2 left-1/2 font-semibold text-xl cursor-pointer -translate-x-1/2 -translate-y-1/2" >
             Tap to Start
