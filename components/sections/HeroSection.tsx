@@ -158,7 +158,7 @@ export default function HeroSection() {
                 ))}
               </div>
               <div className="text-sm">
-                <span className="text-primary font-bold">200+</span> active players and counting
+                <span className="text-primary font-bold">2000+</span> active players and counting
               </div>
             </motion.div>
           </motion.div>
